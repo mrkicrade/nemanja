@@ -31,4 +31,12 @@ function getAll(){
   return $result; // Ovim kažemo da nam funkcija vrati sve oglase koje je pokupila iz baze
 }
 
+function get_all_user_ads($id) { // varijabla $id dobija kao vrednost ono sto smo poslali kao argument kada smo pozvali ovu funkciju(u nasem slucaju to je vrednost $_SESSION['id'])
+  $sql = "SELECT oglas.id, oglas.user_id, oglas.title, oglas.category, oglas.price, oglas.text, users.name FROM oglas INNER JOIN users ON oglas.user_id = users.id WHERE oglas.user_id = '$id'";
+  $query = mysqli_query(db(), $sql);
+  $result = mysqli_fetch_all($query, MYSQLI_ASSOC);
+
+  return $result;
+}
+
 ?>
