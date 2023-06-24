@@ -17,7 +17,7 @@
               </div>
               <div class="card-body text-center">
                 <h5><?php echo $oglas['title'] ?></h5>
-                <a href="" class="btn btn-light btn-sm">
+                <a href="singl.oglas.php?id=<?php echo $oglas['id']; ?>" class="btn btn-light btn-sm">
                   Vidi oglas
                 </a>
               </div>

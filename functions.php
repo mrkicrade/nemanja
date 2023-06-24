@@ -39,4 +39,12 @@ function get_all_user_ads($id) { // varijabla $id dobija kao vrednost ono sto sm
   return $result;
 }
 
+function getOne($id){
+  $sql = "SELECT oglas.id, oglas.user_id, oglas.title, oglas.category, oglas.price, oglas.text, users.name FROM oglas INNER JOIN users ON oglas.user_id = users.id WHERE oglas.id = '$id'";
+  $query = mysqli_query(db(), $sql);
+  $result = mysqli_fetch_assoc($query);
+
+  return $result;
+}
+
 ?>

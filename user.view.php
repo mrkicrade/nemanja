@@ -17,7 +17,7 @@ require_once 'functions.php';
     <div class="col-10 offset-1">
       <div class="row">
         <div class="col-6 offset-3 mt-3 mb-5">
-          <a href="" class="btn btn-info form-control">Novi oglas</a>
+          <a href="new.add.view.php" class="btn btn-info form-control">Novi oglas</a>
         </div>
       </div>
     </div>
