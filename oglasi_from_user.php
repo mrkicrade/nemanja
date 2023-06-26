@@ -1,11 +1,13 @@
 <?php require_once 'partials/header.php'; ?>
-<?php require_once 'partials/navbar.php'; ?> 
-<?php $oglasi = getAll(); ?> <!-- Ovom funkcijom preuzimamo sve oglase iz baze podataka -->
-<?php // dd($oglasi); ?>
+<?php require_once 'partials/navbar.php'; ?>
+<?php $oglasi = getAllFromUser($_GET['name']);
+// dd($oglasi);
+?> 
+
 <div class="container">
   <div class="row">
     <div class="col-10 offset-1">
-      <h1 class="display-4 text-center">Mali oglasi</h1>
+      <h3 class="display-4 text-center"><?php echo $_GET['name'] ?></h3>
       <div class="row">
         <?php foreach($oglasi as $oglas): ?>
           <div class="col-4">
@@ -22,7 +24,7 @@
                 </a>
               </div>
               <div class="card-footer">
-                <a href="oglasi_from_user.php?name=<?php echo $oglas['name']; ?>" class="btn btn-warning btn-sm float-start">
+                <a href="" class="btn btn-warning btn-sm float-start">
                   <?php echo $oglas['name']; ?>
                 </a>
                 <a href="" class="btn btn-danger btn-sm float-end">
@@ -35,5 +37,5 @@
       </div>
     </div>
   </div>
-</div>   
+</div>
 <?php require_once 'partials/footer.php'; ?>

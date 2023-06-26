@@ -47,4 +47,20 @@ function getOne($id){
   return $result;
 }
 
+function getCategory($cat){
+  $sql = "SELECT oglas.id, oglas.user_id, oglas.title, oglas.category, oglas.price, oglas.text, users.name FROM oglas INNER JOIN users ON oglas.user_id = users.id WHERE oglas.category = '$cat'";
+  $query = mysqli_query(db(), $sql);
+  $result = mysqli_fetch_all($query, MYSQLI_ASSOC);
+
+  return $result;
+}
+
+function getAllFromUser($name){
+  $sql = "SELECT oglas.id, oglas.user_id, oglas.title, oglas.category, oglas.price, oglas.text, users.name FROM oglas INNER JOIN users ON oglas.user_id = users.id WHERE users.name = '$name'";
+  $query = mysqli_query(db(), $sql);
+  $result = mysqli_fetch_all($query, MYSQLI_ASSOC);
+
+  return $result;
+}
+
 ?>
