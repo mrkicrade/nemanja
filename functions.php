@@ -63,4 +63,19 @@ function getAllFromUser($name){
   return $result;
 }
 
+function getAllCategoryFromUser($cat, $id) {
+  $sql = "SELECT *, users.name FROM oglas INNER JOIN users ON oglas.user_id = users.id WHERE oglas.category = '$cat' AND oglas.user_id = '$id'";
+  $query = mysqli_query(db(), $sql);
+  $result = mysqli_fetch_all($query, MYSQLI_ASSOC);
+
+  return $result;
+}
+
+function delete($id) {
+  $sql = "DELETE FROM oglas WHERE id = $id";
+  $query = mysqli_query(db(), $sql);
+  if ($query) {
+    header("Location: user.view.php");
+  }
+}
 ?>

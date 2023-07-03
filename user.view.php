@@ -27,9 +27,10 @@ require_once 'functions.php';
       <div class="col-4">
         <div class="card mb-2 mt-2">
           <div class="card-header">
-            <a href="" class="btn btn-secondary btn-sm">
+            <a href="category.from.user.php?category=<?php echo $oglas['category']; ?>&id=<?php echo $_SESSION['id']; ?>" class="btn btn-secondary">
               <?php echo $oglas['category']; ?>
             </a>
+            <a href="delete.php?id=<?php echo $oglas['id']; ?>" class="btn btn-primary btn-sm float-end">Delete</a>
           </div>
           <div class="card-body text-center">
             <h5><?php echo $oglas['title'] ?></h5>
